@@ -81,6 +81,7 @@ export function VideoPlayer(props: VideoPlayerProps) {
   if (!isVisible) {
     return (
       <div ref={containerRef} className={className} aria-label={ariaLabel ?? 'Video player'}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={poster} alt="Video poster" loading="lazy" width={1280} height={720} />
       </div>
     );
@@ -96,6 +97,7 @@ export function VideoPlayer(props: VideoPlayerProps) {
           rel="noreferrer"
           aria-label="Ouvrir la vidéo dans un nouvel onglet"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={poster} alt="Video fallback" />
         </a>
       </div>

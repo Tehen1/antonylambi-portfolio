@@ -2,14 +2,23 @@ import type { SocialLink } from '@/types';
 
 export const SITE_CONFIG = {
   name: 'Antony Lambinon',
-  title: 'Antony Lambinon | Expert SEO, IA & Blockchain',
+  title: 'Développeur Blockchain & Smart Contracts à Liège | Antony Lambinon',
   description:
-    'Portfolio professionnel d\'Antony Lambinon, développeur full-stack spécialisé en React, Next.js, SEO, Intelligence Artificielle et Blockchain. Plus de 5 ans d\'expérience et 100+ projets réalisés.',
+    'Expert développeur blockchain à Liège spécialisé en Solidity, smart contracts et dApps. Plus de 5 ans d\'expérience, 100+ projets réalisés. Audit de sécurité Web3, optimisation gas et déploiement mainnet-ready.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://antonylambi.be',
   ogImage: '/images/og-image.jpg',
   twitterHandle: '@antonylambi',
-  locale: 'fr_FR',
+  locale: 'fr_BE',
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@antonylambi.be',
+  phone: '+32 467 84 18 50',
+  phoneFormatted: '+32 467 84 18 50',
+  phoneLink: 'tel:+32467841850',
+  location: {
+    city: 'Liège',
+    region: 'Wallonie',
+    country: 'Belgique',
+    countryCode: 'BE',
+  },
 } as const;
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -52,28 +61,79 @@ export const METRICS = {
 
 export const STRUCTURED_DATA = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: SITE_CONFIG.name,
+  '@type': 'ProfessionalService',
+  name: 'Antony Lambinon - Développeur Blockchain Liège',
+  alternateName: 'Antony Lambi',
   url: SITE_CONFIG.url,
-  image: `${SITE_CONFIG.url}/images/profile.jpg`,
-  jobTitle: 'Développeur Full-Stack',
+  logo: `${SITE_CONFIG.url}/images/logo.png`,
+  image: `${SITE_CONFIG.url}/images/og-image.jpg`,
   description: SITE_CONFIG.description,
+  telephone: SITE_CONFIG.phone,
+  email: SITE_CONFIG.email,
+  priceRange: '€€€',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE_CONFIG.location.city,
+    addressRegion: SITE_CONFIG.location.region,
+    addressCountry: SITE_CONFIG.location.countryCode,
+  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'Belgique',
+    },
+    {
+      '@type': 'Country',
+      name: 'Europe',
+    },
+  ],
   sameAs: SOCIAL_LINKS.filter((link) => link.name !== 'Email').map((link) => link.url),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Services Blockchain',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Développement Smart Contracts Solidity',
+          description:
+            'Création de smart contracts sécurisés et audités sur Ethereum, Polygon et zkEVM',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Création dApps Décentralisées',
+          description:
+            'Développement d\'applications blockchain full-stack avec React et Web3',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Audit de Sécurité Web3',
+          description:
+            'Audit approfondi de smart contracts avec Slither, Mythril et tests de fuzzing',
+        },
+      },
+    ],
+  },
   knowsAbout: [
+    'Solidity',
+    'Smart Contracts',
+    'Blockchain',
+    'Ethereum',
+    'Web3',
+    'DeFi',
+    'NFT',
+    'dApps',
+    'OpenZeppelin',
+    'Foundry',
     'React',
     'Next.js',
     'TypeScript',
-    'Blockchain',
-    'Solidity',
-    'SEO',
-    'Intelligence Artificielle',
-    'Web3',
   ],
-  workLocation: {
-    '@type': 'Place',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'BE',
-    },
-  },
 };
