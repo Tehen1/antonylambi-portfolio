@@ -14,10 +14,26 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  // Cache headers pour assets statiques (vidéos, images)
+  async headers() {
+    return [
+      {
+        source: '/videos/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'Timing-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
+        ],
+      },
+    ];
+  },
+
+  // Typed Routes (stable depuis Next.js 15)
+  typedRoutes: true,
+
   // Experimental features
   experimental: {
     optimizePackageImports: ['@/components', '@/lib'],
-    typedRoutes: true,
   },
 
   // Webpack customization
