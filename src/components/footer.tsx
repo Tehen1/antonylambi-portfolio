@@ -61,10 +61,10 @@ export function Footer() {
             <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">Contact</h3>
             <div className="flex flex-col gap-3 mb-4">
               <a
-                href={`mailto:${SITE_CONFIG.email}`}
+                href={`mailto:${SITE_CONFIG.contact.email}`}
                 className="text-[var(--text-secondary)] hover:text-[var(--primary)] transition-colors text-sm"
               >
-                {SITE_CONFIG.email}
+                {SITE_CONFIG.contact.email}
               </a>
             </div>
             <div className="flex gap-4">

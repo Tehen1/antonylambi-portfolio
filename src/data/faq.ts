@@ -55,6 +55,7 @@ export const faqItems: FAQItem[] = [
     category: 'blockchain',
   },
 ];
+export const FAQ_ITEMS = faqItems;
 
 /**
  * Helper: Filtrer FAQ par catégorie

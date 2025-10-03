@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { SITE_CONFIG, STRUCTURED_DATA } from '@/lib/constants';
 import './globals.css';
 
@@ -13,10 +14,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: SITE_CONFIG.title,
+    default: SITE_CONFIG.seo.title,
     template: `%s | ${SITE_CONFIG.name}`,
   },
-  description: SITE_CONFIG.description,
+  description: SITE_CONFIG.seo.description,
   keywords: [
     'Développeur Full-Stack',
     'React',
@@ -37,23 +38,23 @@ export const metadata: Metadata = {
     locale: SITE_CONFIG.locale,
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
-    title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
+    title: SITE_CONFIG.seo.title,
+    description: SITE_CONFIG.seo.description,
     images: [
       {
         url: SITE_CONFIG.ogImage,
         width: 1200,
         height: 630,
-        alt: SITE_CONFIG.title,
+        alt: SITE_CONFIG.seo.title,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: SITE_CONFIG.twitterHandle,
-    creator: SITE_CONFIG.twitterHandle,
-    title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
+    site: SITE_CONFIG.social.twitter,
+    creator: SITE_CONFIG.social.twitter,
+    title: SITE_CONFIG.seo.title,
+    description: SITE_CONFIG.seo.description,
     images: [SITE_CONFIG.ogImage],
   },
   robots: {
@@ -94,6 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans`}>
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="cyberpunk"

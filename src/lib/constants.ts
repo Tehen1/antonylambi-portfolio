@@ -2,17 +2,24 @@ import type { SocialLink } from '@/types';
 
 export const SITE_CONFIG = {
   name: 'Antony Lambinon',
-  title: 'Développeur Blockchain & Smart Contracts à Liège | Antony Lambinon',
-  description:
-    'Expert développeur blockchain à Liège spécialisé en Solidity, smart contracts et dApps. Plus de 5 ans d\'expérience, 100+ projets réalisés. Audit de sécurité Web3, optimisation gas et déploiement mainnet-ready.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://antonylambi.be',
+  seo: {
+    title: 'Développeur Blockchain & Smart Contracts à Liège | Antony Lambinon',
+    description:
+      'Expert développeur blockchain à Liège spécialisé en Solidity, smart contracts et dApps. Plus de 5 ans d\'expérience, 100+ projets réalisés. Audit de sécurité Web3, optimisation gas et déploiement mainnet-ready.',
+  },
+  contact: {
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@antonylambi.be',
+    phone: '+32 467 84 18 50',
+    location: 'Liège, Wallonie, Belgique',
+  },
+  social: {
+    github: 'tehen1',
+    linkedin: 'antony-lambinon',
+    twitter: '@antonylambi',
+  },
   ogImage: '/images/og-image.jpg',
-  twitterHandle: '@antonylambi',
   locale: 'fr_BE',
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@antonylambi.be',
-  phone: '+32 467 84 18 50',
-  phoneFormatted: '+32 467 84 18 50',
-  phoneLink: 'tel:+32467841850',
   location: {
     city: 'Liège',
     region: 'Wallonie',
@@ -39,7 +46,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: `mailto:${SITE_CONFIG.email}`,
+    url: `mailto:${SITE_CONFIG.contact.email}`,
     icon: 'mail',
   },
 ];
@@ -67,9 +74,9 @@ export const STRUCTURED_DATA = {
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/images/logo.png`,
   image: `${SITE_CONFIG.url}/images/og-image.jpg`,
-  description: SITE_CONFIG.description,
-  telephone: SITE_CONFIG.phone,
-  email: SITE_CONFIG.email,
+  description: SITE_CONFIG.seo.description,
+  telephone: SITE_CONFIG.contact.phone,
+  email: SITE_CONFIG.contact.email,
   priceRange: '€€€',
   address: {
     '@type': 'PostalAddress',

@@ -129,6 +129,7 @@ export const services: Service[] = [
     ctaLabel: 'Préparer mon IDO',
   },
 ];
+export const SERVICES = services;
 
 /**
  * Helper: Obtenir les services mis en avant

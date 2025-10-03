@@ -72,6 +72,7 @@ export const testimonials: Testimonial[] = [
     date: '2024-07-22',
   },
 ];
+export const TESTIMONIALS = testimonials;
 
 /**
  * Helper: Filtrer les témoignages par type de projet

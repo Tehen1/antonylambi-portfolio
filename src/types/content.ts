@@ -24,9 +24,11 @@ export interface Service {
   slug: string;
   title: string; // H2 SEO-friendly
   shortDescription: string; // 50-70 mots
+  description?: string; // Alias pour shortDescription
+  category?: string;
+  icon?: string;
   technologies: string[];
   benefits: string[]; // 3-5 bénéfices
-  icon?: string;
   ctaLabel?: string;
   featured?: boolean;
 }
@@ -49,11 +51,15 @@ export interface FAQItem {
 export interface SEOPrompt {
   id: string;
   title: string;
-  goal: string;
-  promptBody: string;
+  description?: string;
+  goal?: string;
+  promptText: string;
+  promptBody?: string;
+  useCase?: string;
+  expectedOutput?: string;
   usageNotes?: string;
   category: 'technical' | 'content' | 'local' | 'analytics';
-  tags: string[];
+  tags?: string[];
 }
 
 /**
@@ -68,14 +74,21 @@ export type TechStackCategoryType =
   | 'seo';
 
 /**
+ * ExpertiseLevel - Niveau d'expertise technique
+ */
+export type ExpertiseLevel = 'expert' | 'advanced' | 'intermediate' | 'beginner';
+
+/**
  * TechItem - Item technologique dans le stack
  */
 export interface TechItem {
   name: string;
-  level: 'Expert' | 'Avancé' | 'Intermédiaire' | 'Récent';
-  projectsCount: number;
+  level: ExpertiseLevel;
+  icon: string;
+  description: string;
+  yearsOfExperience: number;
+  projectsCount?: number;
   badge?: 'expert' | 'recent' | null;
-  description?: string;
   docsUrl?: string;
 }
 
@@ -83,9 +96,9 @@ export interface TechItem {
  * TechStackCategory - Groupe de technologies
  */
 export interface TechStackCategory {
-  id: TechStackCategoryType;
-  title: string;
-  items: TechItem[];
+  category: string;
+  description: string;
+  technologies: TechItem[];
 }
 
 /**
