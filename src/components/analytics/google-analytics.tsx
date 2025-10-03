@@ -41,9 +41,9 @@ export function GoogleAnalytics() {
 
     const url = pathname + searchParams.toString();
     
-    // @ts-ignore - gtag est injecté par le script GA4
+    // @ts-expect-error - gtag est injecté par le script GA4 et n'a pas de types TypeScript
     if (typeof window.gtag !== 'undefined') {
-      // @ts-ignore
+      // @ts-expect-error - window.gtag est injecté dynamiquement par le script GA4
       window.gtag('config', measurementId, {
         page_path: url,
       });
@@ -94,7 +94,7 @@ export interface GAEvent {
   category: string;
   label?: string;
   value?: number;
-  [key: string]: any;
+  [key: string]: string | number | boolean | undefined;
 }
 
 /**
@@ -126,9 +126,9 @@ export function trackEvent({ action, category, label, value, ...otherParams }: G
     return;
   }
 
-  // @ts-ignore - gtag injecté par script
+  // @ts-expect-error - gtag injecté par script et n'a pas de types TypeScript
   if (typeof window.gtag !== 'undefined') {
-    // @ts-ignore
+    // @ts-expect-error - window.gtag est injecté dynamiquement par le script GA4
     window.gtag('event', action, {
       event_category: category,
       event_label: label,

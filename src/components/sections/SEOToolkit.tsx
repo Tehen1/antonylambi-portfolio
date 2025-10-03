@@ -40,7 +40,7 @@ export function SEOToolkit() {
               SEO Toolkit <span className="text-primary">pour Web3</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              3 prompts SEO professionnels prêts à l'emploi pour optimiser votre visibilité
+              3 prompts SEO professionnels prêts à l&apos;emploi pour optimiser votre visibilité
               blockchain. Utilisez-les gratuitement pour améliorer votre référencement.
             </p>
           </div>
@@ -119,7 +119,7 @@ export function SEOToolkit() {
 
           {/* CTA footer */}
           <div className="text-center p-8 bg-gradient-to-br from-primary/5 via-primary/10 to-purple-500/10 rounded-xl border border-primary/20">
-            <h3 className="text-2xl font-bold mb-3">Besoin d'un audit SEO complet ?</h3>
+            <h3 className="text-2xl font-bold mb-3">Besoin d&apos;un audit SEO complet ?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Je propose des audits SEO personnalisés pour projets blockchain et Web3, incluant
               analyse technique, stratégie de contenu et optimisation on-chain.

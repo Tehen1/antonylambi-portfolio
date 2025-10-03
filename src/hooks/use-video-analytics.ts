@@ -194,7 +194,7 @@ export function useFormAnalytics(formId: string) {
     });
   }, [formId]);
 
-  const trackFormSubmit = useCallback((data?: Record<string, any>) => {
+  const trackFormSubmit = useCallback((data?: Record<string, string | number | boolean>) => {
     trackEvent({
       action: 'form_submit',
       category: 'conversion',

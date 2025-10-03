@@ -56,9 +56,9 @@ export function TechStack() {
               Stack Technologique <span className="text-primary">Maîtrisé</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              {TECH_STATS.totalTechnologies} technologies couvrant tout l'écosystème Web3, avec{' '}
+              {TECH_STATS.totalTechnologies} technologies couvrant tout l&apos;écosystème Web3, avec{' '}
               {TECH_STATS.expertTechnologies} expertises niveau expert et{' '}
-              {TECH_STATS.averageExperience.toFixed(1)} ans de moyenne d'expérience.
+              {TECH_STATS.averageExperience.toFixed(1)} ans de moyenne d&apos;expérience.
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export function TechStack() {
               <div className="text-3xl font-bold text-primary mb-2">
                 {TECH_STATS.averageExperience.toFixed(1)}
               </div>
-              <div className="text-sm text-muted-foreground">Années d'expérience moyenne</div>
+              <div className="text-sm text-muted-foreground">Années d&apos;expérience moyenne</div>
             </div>
           </div>
         </div>

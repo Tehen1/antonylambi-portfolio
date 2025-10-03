@@ -26,7 +26,7 @@ export function Testimonials() {
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Plus de 30 clients satisfaits dans 8 pays nous font confiance pour leurs projets
-              blockchain et Web3. Découvrez leurs retours d'expérience.
+              blockchain et Web3. Découvrez leurs retours d&apos;expérience.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export function Testimonials() {
 
                 {/* Texte témoignage */}
                 <blockquote className="text-sm text-muted-foreground leading-relaxed mb-6 italic">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
 
                 {/* Auteur et entreprise */}

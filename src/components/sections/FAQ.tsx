@@ -94,7 +94,7 @@ export function FAQ() {
 
           {/* CTA footer */}
           <div className="text-center pt-8 border-t border-border">
-            <p className="text-muted-foreground mb-4">Vous avez d'autres questions ?</p>
+            <p className="text-muted-foreground mb-4">Vous avez d&apos;autres questions ?</p>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"

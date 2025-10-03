@@ -10,7 +10,7 @@ export function About() {
   const values = [
     {
       icon: Shield,
-      title: 'Sécurité d\'abord',
+      title: 'Sécurité d&apos;abord',
       description:
         'Audits systématiques, tests >95% coverage, respect standards OpenZeppelin pour garantir la robustesse de chaque smart contract.',
     },
@@ -44,10 +44,10 @@ export function About() {
               id="about-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
             >
-              Développeur <span className="text-primary">passionné</span> par l'innovation Web3
+              Développeur <span className="text-primary">passionné</span> par l&apos;innovation Web3
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              5 ans d'expertise blockchain combinant développement smart contracts sécurisés,
+              5 ans d&apos;expertise blockchain combinant développement smart contracts sécurisés,
               intégration IA avancée et architecture SaaS scalable.
             </p>
           </div>
@@ -62,22 +62,22 @@ export function About() {
 
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Passionné par la technologie depuis mes débuts en développement web, j'ai
+                  Passionné par la technologie depuis mes débuts en développement web, j&apos;ai
                   découvert la blockchain en 2019 et immédiatement perçu son potentiel
                   révolutionnaire pour{' '}
                   <strong className="text-foreground">décentraliser la confiance</strong>.
                 </p>
 
                 <p>
-                  Aujourd'hui, je combine mon expertise en{' '}
+                  Aujourd&apos;hui, je combine mon expertise en{' '}
                   <strong className="text-foreground">Solidity, Next.js et IA</strong> pour créer
                   des dApps qui allient sécurité maximale et expérience utilisateur fluide. Chaque
                   projet est une opportunité de repousser les limites du Web3.
                 </p>
 
                 <p>
-                  Basé à <strong className="text-foreground">Liège, Belgique</strong>, j'accompagne
-                  startups et entreprises établies dans leur transformation blockchain, de l'audit
+                  Basé à <strong className="text-foreground">Liège, Belgique</strong>, j&apos;accompagne
+                  startups et entreprises établies dans leur transformation blockchain, de l&apos;audit
                   technique au déploiement production.
                 </p>
               </div>
