@@ -1,103 +1,190 @@
-import Image from "next/image";
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { Button } from '@/components/ui/button';
+import { projects } from '@/data/projects';
+import { skills } from '@/data/skills';
+import { METRICS } from '@/lib/constants';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section
+          id="hero"
+          className="min-h-screen flex items-center justify-center bg-[var(--bg-dark)] bg-grid relative"
+          style={{ paddingTop: 'var(--header-height)' }}
+        >
+          <div className="container mx-auto px-4 py-20">
+            <div className="max-w-4xl mx-auto text-center fade-in-up">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 glitch" data-text="Antony Lambinon">
+                Antony Lambinon
+              </h1>
+              <h2 className="text-2xl md:text-4xl text-[var(--text-secondary)] mb-8">
+                Expert en{' '}
+                <span className="text-[var(--primary)] text-glow">Développement Web</span>,{' '}
+                <span className="text-[var(--secondary)] text-glow">SEO</span> &{' '}
+                <span className="text-[var(--accent)] text-glow">Blockchain</span>
+              </h2>
+              <p className="text-lg text-[var(--text-secondary)] mb-12 leading-relaxed">
+                Avec plus de 5 ans d&apos;expérience, je crée des solutions numériques innovantes
+                combinant développement web, intelligence artificielle et blockchain pour des
+                performances optimales et une expérience utilisateur exceptionnelle.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] neon-pulse"
+                >
+                  <a href="#projects">Voir mes projets</a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-[var(--border)] hover:border-[var(--primary)] text-[var(--text-primary)]"
+                >
+                  <a href="#contact">Me contacter</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Metrics Section */}
+        <section id="metrics" className="py-20 bg-[var(--bg-card)]">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="cyber-card p-6 text-center">
+                <h3 className="text-4xl font-bold text-[var(--primary)] mb-2">
+                  {METRICS.projectsCompleted}
+                </h3>
+                <p className="text-[var(--text-secondary)]">Projets réalisés</p>
+              </div>
+              <div className="cyber-card p-6 text-center">
+                <h3 className="text-4xl font-bold text-[var(--primary)] mb-2">
+                  {METRICS.yearsExperience}
+                </h3>
+                <p className="text-[var(--text-secondary)]">Années d&apos;expérience</p>
+              </div>
+              <div className="cyber-card p-6 text-center">
+                <h3 className="text-4xl font-bold text-[var(--primary)] mb-2">
+                  {METRICS.clientsSatisfied}
+                </h3>
+                <p className="text-[var(--text-secondary)]">Clients satisfaits</p>
+              </div>
+              <div className="cyber-card p-6 text-center">
+                <h3 className="text-4xl font-bold text-[var(--primary)] mb-2">
+                  {METRICS.technologiesMastered}
+                </h3>
+                <p className="text-[var(--text-secondary)]">Technologies maîtrisées</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Preview Section */}
+        <section id="projects" className="py-20 bg-[var(--bg-dark)]">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-4 text-[var(--text-primary)]">
+              Projets Phares
+            </h2>
+            <p className="text-center text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto">
+              Découvrez mes réalisations en optimisation SEO, développement blockchain et
+              intelligence artificielle
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.slice(0, 3).map((project) => (
+                <div key={project.id} className="cyber-card p-6">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] text-sm mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs px-3 py-1 rounded-full bg-[var(--bg-dark)] border border-[var(--border)] text-[var(--text-secondary)]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-[var(--primary)] text-sm">{project.metrics.users}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-[var(--border)] hover:border-[var(--primary)]"
+              >
+                <a href="#all-projects">Voir tous les projets →</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Preview */}
+        <section id="skills" className="py-20 bg-[var(--bg-card)]">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-primary)]">
+              Compétences Principales
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {skills.map((skill) => (
+                <div key={skill.id} className="cyber-card p-6">
+                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">
+                    {skill.name}
+                  </h3>
+                  <div className="w-full bg-[var(--bg-dark)] rounded-full h-3 mb-2 overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-full transition-all duration-500"
+                      style={{ width: `${skill.percentage}%` }}
+                    />
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-[var(--text-secondary)]">
+                      {skill.projectsCount} projets
+                    </span>
+                    <span className="text-sm font-bold text-[var(--primary)]">
+                      {skill.percentage}%
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 bg-[var(--bg-dark)]">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-4xl font-bold mb-6 text-[var(--text-primary)]">
+              Travaillons Ensemble
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+              Vous avez un projet en tête ? Discutons de comment je peux vous aider à le réaliser.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] neon-pulse"
+            >
+              <a href="mailto:contact@antonylambi.be">Envoyer un message</a>
+            </Button>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+      <Footer />
+    </>
   );
 }

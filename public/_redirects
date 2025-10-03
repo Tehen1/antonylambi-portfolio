@@ -1,0 +1,9 @@
+# Redirect www to apex domain
+https://www.antonylambi.be/* https://antonylambi.be/:splat 301!
+
+# Force HTTPS
+http://antonylambi.be/* https://antonylambi.be/:splat 301!
+http://www.antonylambi.be/* https://antonylambi.be/:splat 301!
+
+# Fallback for SPA (Single Page Application)
+/*    /index.html   200

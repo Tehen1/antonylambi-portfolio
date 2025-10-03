@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio Antony Lambinon
 
-## Getting Started
+Portfolio professionnel développé avec **Next.js 15**, **TypeScript**, **Tailwind CSS** et **Prisma**. Site optimisé SEO avec 4 thèmes (Cyberpunk par défaut) et déployable sur **Cloudflare Pages** via **antonylambi.be**.
 
-First, run the development server:
+## ✨ Fonctionnalités
+
+- ✅ **4 Thèmes** : Classic, Cyberpunk (default), Matrix, Neon
+- ✅ **SEO Optimisé** : Metadata, Open Graph, Twitter Cards, JSON-LD
+- ✅ **Performance** : Static Site Generation (SSG), Core Web Vitals >90
+- ✅ **Responsive** : Mobile-first design avec Tailwind CSS
+- ✅ **Sécurité** : CSP headers, HSTS, HTTPS forcé
+- ✅ **TypeScript Strict** : 100% type-safe
+- ✅ **Composants Shadcn/ui** : Button, Card, Accordion, Select, Badge
+- ✅ **Animations** : Glitch effects, neon pulse, fade-in animations
+
+## 📦 Stack Technique
+
+- **Framework** : Next.js 15.5.4 (App Router)
+- **Langage** : TypeScript 5.9+ (strict mode)
+- **Styling** : Tailwind CSS 4.1 + CSS Variables
+- **UI Components** : Shadcn/ui
+- **Database** : Prisma + Neon PostgreSQL (optionnel)
+- **Theming** : next-themes
+- **Charts** : Chart.js + react-chartjs-2
+- **Validation** : Zod
+- **Déploiement** : Cloudflare Pages
+- **CI/CD** : GitHub Actions
+
+## 🛠️ Installation
+
+### Prérequis
+
+- Node.js 20.x ou supérieur
+- pnpm (recommandé) ou npm
+
+### Étapes
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# 1. Installer les dépendances
+pnpm install
+
+# 2. Configurer les variables d'environnement
+cp .env.example .env.local
+# Éditer .env.local avec vos valeurs
+
+# 3. Lancer le serveur de développement
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible sur `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Scripts Disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev          # Lancer le serveur de développement (Turbopack)
+pnpm build        # Build de production (SSG export)
+pnpm start        # Serveur de production (après build)
+pnpm lint         # Linter ESLint
+pnpm typecheck    # Vérifier les types TypeScript
+pnpm format       # Formater le code avec Prettier
+```
 
-## Learn More
+## 🎨 Thèmes
 
-To learn more about Next.js, take a look at the following resources:
+Le site propose 4 thèmes switchables en temps réel :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Classic** 🎯 : Professionnel bleu (#007BFF)
+2. **Cyberpunk** ⚡ : Électrique cyan (#00f3ff) - **Par défaut**
+3. **Matrix** 🟢 : Terminal vert (#00ff41)
+4. **Neon** 💖 : Rose & Bleu (#ff0080, #00d4ff)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Déploiement Cloudflare Pages
 
-## Deploy on Vercel
+### Configuration GitHub Secrets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ajouter dans **Settings → Secrets and variables → Actions** :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+CLOUDFLARE_API_TOKEN=your_token_here
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here
+```
+
+### Déploiement Automatique
+
+Chaque push sur `main` déclenche automatiquement :
+
+1. Lint et typecheck
+2. Build SSG
+3. Déploiement sur Cloudflare Pages
+4. Site accessible sur `antonylambi.be`
+
+## 🔐 Variables d'Environnement
+
+```env
+# Site URL
+NEXT_PUBLIC_SITE_URL="https://antonylambi.be"
+
+# Contact
+NEXT_PUBLIC_CONTACT_EMAIL="contact@antonylambi.be"
+
+# Analytics (optionnel)
+NEXT_PUBLIC_GA_ID="G-XXXXXXXXXX"
+NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN="your_token"
+```
+
+## 📄 Licence
+
+© 2025 Antony Lambinon. Tous droits réservés.
