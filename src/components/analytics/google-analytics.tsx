@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 
 /**
  * Composant Google Analytics 4
@@ -30,7 +30,7 @@ import { useEffect } from 'react';
  * 
  * @env NEXT_PUBLIC_GA_MEASUREMENT_ID - ID de mesure GA4 (format: G-XXXXXXXXXX)
  */
-export function GoogleAnalytics() {
+function GoogleAnalyticsInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -136,6 +136,17 @@ export function trackEvent({ action, category, label, value, ...otherParams }: G
       ...otherParams,
     });
   }
+}
+
+/**
+ * Wrapper avec Suspense boundary pour éviter erreurs SSR
+ */
+export function GoogleAnalytics() {
+  return (
+    <Suspense fallback={null}>
+      <GoogleAnalyticsInner />
+    </Suspense>
+  );
 }
 
 /**
